@@ -117,12 +117,7 @@
                     data:function(param){
                         param.movieName = $("#criteriaQueryForm #cr_movieName").val();
                         param.showHomeId = $("#criteriaQueryForm #cr_showHomeId").val();
-                        if ($("#criteriaQueryForm #minMovieStock").prop("checked")){
-                            param.minMovieStock = $("#criteriaQueryForm #minMovieStock").val();
-                        }
-                        if ($("#criteriaQueryForm #maxMovieStock").prop("checked")){
-                            param.maxMovieStock = $("#criteriaQueryForm #maxMovieStock").val();
-                        }
+                        param.movieStock = $("#criteriaQueryForm [name=cr_movieStock]:checked").val();
                     }
                 },
                 columns:[
@@ -299,10 +294,10 @@
                                 <label class="col-sm-2 control-label">库存</label>
                                 <div class="col-sm-10">
                                     <label class="radio-inline">
-                                        <input type="radio" name="cr_movieStock" id="minMovieStock" value="1"/>有票
+                                        <input type="radio" name="cr_movieStock" value=">"/>有票
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cr_movieStock" id="maxMovieStock" value="0"/>无票
+                                        <input type="radio" name="cr_movieStock" value="="/>无票
                                     </label>
                                 </div>
                             </div>
